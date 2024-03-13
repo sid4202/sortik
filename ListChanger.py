@@ -4,13 +4,13 @@ class ListChanger:
         self.arr_2 = arr_2
 
     def sa(self):
-        if self.arr_1.length < 2:
+        if len(self.arr_1) < 2:
             return
 
         self.arr_1[0], self.arr_1[1] = self.arr_1[1], self.arr_1[0]
 
     def sb(self):
-        if self.arr_2.length < 2:
+        if len(self.arr_2) < 2:
             return
 
         self.arr_2[0], self.arr_2[1] = self.arr_2[1], self.arr_2[0]

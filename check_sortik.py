@@ -4,24 +4,29 @@ class SortikChecker:
         self.arr_1 = arr_1
         self.arr_2 = []
 
-    def handle_operations(self, operation_str):
-        commands = operation_str.split()
-
+    def handle_operations(self, commands):
         list_changer = ListChanger(self.arr_1, self.arr_2)
 
         for command in commands:
             command = "list_changer." + command + '()'
 
             eval(command)
+        print(self.arr_1)
 
         self.arr_1 = list_changer.arr_1
         self.arr_2 = list_changer.arr_2
 
     def check(self, operation_str):
-        correct_sorted_arr_1 = self.arr_1.copy().sort()
+        correct_sorted_arr_1 = self.arr_1.copy()
+        correct_sorted_arr_1.sort()
+
         self.handle_operations(operation_str)
 
-        if correct_sorted_arr_1 == self.arr_1
+        print(correct_sorted_arr_1)
+        if correct_sorted_arr_1 == self.arr_1:
+            print("CORRECT")
+        else:
+            print("NOT CORRECT")
 
 
 
@@ -29,3 +34,28 @@ class SortikChecker:
 
 
 def main():
+    arr = []
+
+    value = input()
+
+    while value != '!':
+        number = int(value)
+
+        arr.append(number)
+
+        value = input()
+
+    commands = []
+
+    command = input()
+
+    while command != "*":
+        commands.append(command)
+
+        command = input()
+
+    checker = SortikChecker(arr)
+
+    checker.check(commands)
+
+main()
