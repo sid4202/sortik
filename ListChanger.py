@@ -23,13 +23,13 @@ class ListChanger:
         if not self.arr_2:
             return
 
-        self.arr_1.insert(0, self.arr_2[0])
+        self.arr_1.insert(0, self.arr_2.pop(0))
 
     def pb(self):
         if not self.arr_1:
             return
 
-        self.arr_2.insert(0, self.arr_1[0])
+        self.arr_2.insert(0, self.arr_1.pop(0))
 
     def ra(self):
         if not self.arr_1:
