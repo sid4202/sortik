@@ -1,4 +1,7 @@
 from ListChanger import ListChanger
+from CommandColors import CommandColors
+
+
 class SortikChecker:
     def __init__(self, arr_1):
         self.arr_1 = arr_1
@@ -29,14 +32,12 @@ class SortikChecker:
             print("NOT CORRECT")
 
 
-
-
-
-
 def main():
     arr = []
 
     value = input()
+
+    painter = CommandColors()
 
     while value != '!':
         number = int(value)
@@ -53,9 +54,11 @@ def main():
         commands.append(command)
 
         command = input()
+        print(painter.dye_command(command))
 
     checker = SortikChecker(arr)
 
     checker.check(commands)
+
 
 main()
